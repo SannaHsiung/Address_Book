@@ -5,6 +5,7 @@ import _ from "lodash";
 import UserList from "./UserList";
 import ListHeader from "./ListHeader";
 import Searchbox from "./Searchbox";
+import Sort from "./Sort";
 
 export default function App() {
   const [users, setUsers] = useState<User[]>([]);
@@ -27,14 +28,7 @@ export default function App() {
     <div className="p-8">
       <ListHeader />
       <Searchbox value={searchQuery} onChange={setSearchQuery} />
-      <select
-        className="ml-4 w-40 mt-2 p-2 border-2 border-neutral-500 rounded"
-        value={sortOrder}
-        onChange={(e) => setSortOrder(e.target.value as SortOrder)}
-      >
-        <option value="asc">Stigande</option>
-        <option value="desc">Fallande</option>
-      </select>
+      <Sort value={sortOrder} onChange={setSortOrder} />
       <UserList users={sortedUsers} />
     </div>
   );
