@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import type { User } from "./types";
+import type { SortOrder, User } from "./types";
 import { getUsers } from "./services/userService";
 import _ from "lodash";
-import UserItem from "./UserItem";
-
-type SortOrder = "asc" | "desc";
+import UserList from "./UserList";
+import ListHeader from "./ListHeader";
 
 export default function App() {
   const [users, setUsers] = useState<User[]>([]);
@@ -25,7 +24,7 @@ export default function App() {
 
   return (
     <div className="p-8">
-      <h1 className="text-xl font-bold">Anställda</h1>
+      <ListHeader />
       <input
         className="w-80 mt-2 p-2 border-2 border-neutral-500 rounded"
         placeholder="Search..."
@@ -40,11 +39,7 @@ export default function App() {
         <option value="asc">Stigande</option>
         <option value="desc">Fallande</option>
       </select>
-      <ul className="grid grid-cols-1 laptop:grid-cols-4 gap-4 justify-items-center mt-12">
-        {sortedUsers.map((user) => (
-          <UserItem {...user} />
-        ))}
-      </ul>
+      <UserList users={sortedUsers} />
     </div>
   );
 }
