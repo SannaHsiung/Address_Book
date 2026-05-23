@@ -4,6 +4,7 @@ import { getUsers } from "./services/userService";
 import _ from "lodash";
 import UserList from "./UserList";
 import ListHeader from "./ListHeader";
+import Searchbox from "./Searchbox";
 
 export default function App() {
   const [users, setUsers] = useState<User[]>([]);
@@ -25,12 +26,7 @@ export default function App() {
   return (
     <div className="p-8">
       <ListHeader />
-      <input
-        className="w-80 mt-2 p-2 border-2 border-neutral-500 rounded"
-        placeholder="Search..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+      <Searchbox value={searchQuery} onChange={setSearchQuery} />
       <select
         className="ml-4 w-40 mt-2 p-2 border-2 border-neutral-500 rounded"
         value={sortOrder}
