@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        laptop: "1440px",
+        laptop: "1560px",
       },
     },
   },
