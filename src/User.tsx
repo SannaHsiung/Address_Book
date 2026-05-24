@@ -6,9 +6,7 @@ export default function User() {
   const { id } = useParams();
   const user = useUser(id!);
 
-  if (!user) {
-    return;
-  }
+  if (!user) return;
 
   return (
     <div className="m-4">
