@@ -8,7 +8,7 @@ interface Props {
 export default function Sort({ value, onChange }: Props) {
   return (
     <select
-      className="ml-4 w-40 mt-2 p-2 border-2 border-neutral-500 rounded hover:cursor-pointer"
+      className="mobile:ml-4 w-40 mt-2 p-2 border-2 border-neutral-500 rounded hover:cursor-pointer"
       value={value}
       onChange={(e) => onChange(e.target.value as SortOrder)}
     >

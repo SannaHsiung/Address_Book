@@ -55,7 +55,7 @@ export default function UserPage() {
             <i className="fa-solid fa-location-dot mr-1 dark:text-white" />
             <span className="dark:text-white">Adress</span>
           </h1>
-          <div className="grid text-left ml-8">
+          <div className="grid text-left ml-14">
             <p>
               <span className="font-semibold dark:text-white">Gata: </span>
               <span className="dark:text-white">{`${user.streetNumber} ${user.streetName}`}</span>
