@@ -1,21 +1,39 @@
 import { Link, useParams } from "react-router-dom";
 import type { User } from "./types";
 import useUser from "./hooks/useUser";
+import { useState } from "react";
 
 export default function User() {
   const { id } = useParams();
   const user = useUser(id!);
+  const [darkMode, setDarkMode] = useState("");
 
   if (!user) return;
 
   return (
-    <div className="flex h-screen w-full bg-gray-300 dark:bg-slate-900 justify-center items-center dark">
+    <div
+      className={`${darkMode ? "dark" : ""} flex h-screen w-full bg-gray-300 dark:bg-slate-900 justify-center items-center`}
+    >
       <div className="text-center">
         <Link to="/">
           <i className="fa-solid fa-arrow-left dark:text-white" />
           <span className="font-bold ml-1 dark:text-white">Tillbaka</span>
         </Link>
-        <h1 className="mt-8 mb-4 text-2xl font-bold dark:text-white">
+        <div className="mt-4">
+          <button
+            className="p-2 bg-white border-2 border-neutral-500 rounded  hover:bg-slate-400"
+            onClick={() => setDarkMode("")}
+          >
+            <i className="fa-solid fa-sun" />
+          </button>
+          <button
+            className="ml-2 p-2 bg-white border-2 border-neutral-500 rounded  hover:bg-slate-400"
+            onClick={() => setDarkMode("dark")}
+          >
+            <i className="fa-solid fa-moon" />
+          </button>
+        </div>
+        <h1 className="mt-4 mb-4 text-2xl font-bold dark:text-white">
           Information
         </h1>
         <div className="p-5 rounded shadow-xl w-96 bg-white dark:bg-slate-600 ">

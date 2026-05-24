@@ -29,13 +29,13 @@ export default function Users() {
       <Searchbox value={searchQuery} onChange={setSearchQuery} />
       <Sort value={sortOrder} onChange={setSortOrder} />
       <button
-        className="ml-4 p-2 bg-white border-2 border-neutral-500 rounded"
+        className="ml-4 p-2 bg-white border-2 border-neutral-500 rounded hover:bg-slate-400"
         onClick={() => setDarkMode("")}
       >
         <i className="fa-solid fa-sun" />
       </button>
       <button
-        className="ml-2 p-2 bg-white border-2 border-neutral-500 rounded"
+        className="ml-2 p-2 bg-white border-2 border-neutral-500 rounded hover:bg-slate-400"
         onClick={() => setDarkMode("dark")}
       >
         <i className="fa-solid fa-moon" />
