@@ -11,6 +11,7 @@ export default function Users() {
   const users = useUsers();
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
+  const [darkMode, setDarkMode] = useState("");
 
   const filteredUsers = searchQuery
     ? users.filter((u) =>
@@ -21,10 +22,24 @@ export default function Users() {
   const sortedUsers = _.orderBy(filteredUsers, "name", sortOrder);
 
   return (
-    <div className="p-8 h-screen w-full bg-gray-300">
+    <div
+      className={`${darkMode ? "dark" : ""} p-8 h-screen w-full bg-gray-300 dark:bg-slate-900`}
+    >
       <ListHeader />
       <Searchbox value={searchQuery} onChange={setSearchQuery} />
       <Sort value={sortOrder} onChange={setSortOrder} />
+      <button
+        className="ml-4 p-2 bg-white border-2 border-neutral-500 rounded"
+        onClick={() => setDarkMode("")}
+      >
+        <i className="fa-solid fa-sun" />
+      </button>
+      <button
+        className="ml-2 p-2 bg-white border-2 border-neutral-500 rounded"
+        onClick={() => setDarkMode("dark")}
+      >
+        <i className="fa-solid fa-moon" />
+      </button>
       <UsersList users={sortedUsers} />
     </div>
   );
