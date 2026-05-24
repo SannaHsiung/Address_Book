@@ -6,12 +6,13 @@ import ListHeader from "./ListHeader";
 import Searchbox from "./Searchbox";
 import Sort from "./Sort";
 import UsersList from "./UsersList";
+import { useThemeContext } from "./ThemeProvider";
 
 export default function Users() {
   const users = useUsers();
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
-  const [darkMode, setDarkMode] = useState("");
+  const { darkMode, setDarkMode } = useThemeContext();
 
   const filteredUsers = searchQuery
     ? users.filter((u) =>
