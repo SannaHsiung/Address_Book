@@ -24,7 +24,7 @@ export default function Users() {
 
   return (
     <div
-      className={`${darkMode ? "dark" : ""} p-8 h-screen w-full bg-gray-300 dark:bg-slate-900`}
+      className={`${darkMode ? "dark" : ""} p-8 bg-cover bg-gray-300 dark:bg-slate-900`}
     >
       <ListHeader />
       <Searchbox value={searchQuery} onChange={setSearchQuery} />
