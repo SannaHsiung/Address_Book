@@ -1,5 +1,5 @@
-import Users from "./Users";
+import UsersPage from "./UsersPage";
 
 export default function App() {
-  return <Users />;
+  return <UsersPage />;
 }

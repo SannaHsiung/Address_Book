@@ -8,7 +8,7 @@ import Sort from "./Sort";
 import UsersList from "./UsersList";
 import { useThemeContext } from "./ThemeProvider";
 
-export default function Users() {
+export default function UsersPage() {
   const users = useUsers();
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
@@ -24,7 +24,7 @@ export default function Users() {
 
   return (
     <div
-      className={`${darkMode ? "dark" : ""} p-8 h-screen w-full bg-gray-300 dark:bg-slate-900`}
+      className={`${darkMode ? "dark" : ""} p-8 bg-cover bg-gray-300 dark:bg-slate-900`}
     >
       <ListHeader />
       <Searchbox value={searchQuery} onChange={setSearchQuery} />

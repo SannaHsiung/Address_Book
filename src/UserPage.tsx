@@ -1,9 +1,8 @@
 import { Link, useParams } from "react-router-dom";
-import type { User } from "./types";
 import useUser from "./hooks/useUser";
 import { useThemeContext } from "./ThemeProvider";
 
-export default function User() {
+export default function UserPage() {
   const { id } = useParams();
   const user = useUser(id!);
   const { darkMode, setDarkMode } = useThemeContext();
@@ -33,7 +32,7 @@ export default function User() {
             <i className="fa-solid fa-moon" />
           </button>
         </div>
-        <h1 className="mt-4 mb-4 text-2xl font-bold dark:text-white">
+        <h1 className="mt-6 mb-4 text-2xl font-bold dark:text-white">
           Information
         </h1>
         <div className="p-5 rounded shadow-xl w-96 bg-white dark:bg-slate-600 ">

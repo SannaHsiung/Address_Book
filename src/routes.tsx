@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import User from "./User";
 import NotFound from "./NotFound";
+import UserPage from "./UserPage";
 
 const router = createBrowserRouter([
   { path: "/", element: <App />, errorElement: <NotFound /> },
-  { path: "/:id", element: <User /> },
+  { path: "/:id", element: <UserPage /> },
 ]);
 
 export default router;
