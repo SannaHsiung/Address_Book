@@ -20,8 +20,15 @@ function mapToUsers(results: any): User[] {
         id: result.login.uuid,
         name: `${result.name.first} ${result.name.last}`,
         email: result.email,
-        phone: result.phone,
+        phone: result.cell,
         avatar: result.picture.large,
+        streetNumber: result.location.street.number,
+        streetName: result.location.street.name,
+        city: result.location.city,
+        state: result.location.state,
+        country: result.location.country,
+        registered: result.registered.date,
+        nat: result.nat,
       }) as User,
   );
 }
