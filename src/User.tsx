@@ -1,12 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import type { User } from "./types";
 import useUser from "./hooks/useUser";
-import { useState } from "react";
+import { useThemeContext } from "./ThemeProvider";
 
 export default function User() {
   const { id } = useParams();
   const user = useUser(id!);
-  const [darkMode, setDarkMode] = useState("");
+  const { darkMode, setDarkMode } = useThemeContext();
 
   if (!user) return;
 
