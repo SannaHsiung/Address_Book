@@ -1,16 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import type { User } from "./types";
-import { getUser } from "./services/userService";
+import useUser from "./hooks/useUser";
 
 export default function User() {
   const { id } = useParams();
-  const [user, setUser] = useState<User>();
-
-  useEffect(() => {
-    if (!id) return;
-    getUser(id).then((user) => setUser(user));
-  }, []);
+  const user = useUser(id!);
 
   if (!user) return;
 
