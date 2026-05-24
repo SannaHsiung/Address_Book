@@ -28,7 +28,6 @@ function mapToUsers(results: any): User[] {
         state: result.location.state,
         country: result.location.country,
         registered: result.registered.date,
-        nat: result.nat,
       }) as User,
   );
 }

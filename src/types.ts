@@ -10,7 +10,6 @@ export interface User {
   state: string;
   country: string;
   registered: string;
-  nat: string;
 }
 
 export type SortOrder = "asc" | "desc";
